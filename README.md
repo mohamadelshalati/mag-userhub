@@ -16,6 +16,22 @@ mag-userhub/
 
 ## Getting Started
 
+### Database
+
+Create a `.env` file in the project root with the following variables:
+
+```
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+```
+
+Then start the database:
+
+```bash
+docker compose up --build
+```
+
 ### Backend
 
 ```bash
@@ -37,12 +53,20 @@ The app will be available at `http://localhost:[5173]` by default.
 
 ## Environment Variables
 
-Add environment variables `application.yml` (backend):
+Add environment variables to `application.yml` (backend):
 
 ```
 # Backend
 SPRING_DATASOURCE_URL=
 SPRING_DATASOURCE_USERNAME=
 SPRING_DATASOURCE_PASSWORD=
+```
 
+## Testing
+
+### Backend
+
+```bash
+cd backend
+./mvnw test
 ```
